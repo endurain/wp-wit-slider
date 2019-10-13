@@ -19,7 +19,7 @@
  * @subpackage Wit_Slider/public
  * @author     Zac Sanders <zacharyjsanders@gmail.com>
  */
-class Monospace_Slides_Public {
+class Wit_Slider_Public {
 
 	/**
 	 * The ID of this plugin.
@@ -83,10 +83,10 @@ class Monospace_Slides_Public {
 
 		/**
 		 * An instance of this class should be passed to the run() function
-		 * defined in Monospace_Slides_Loader as all of the hooks are defined
+		 * defined in Wit_Slider_Loader as all of the hooks are defined
 		 * in that particular class.
 		 *
-		 * The Monospace_Slides_Loader will then create the relationship
+		 * The Wit_Slider_Loader will then create the relationship
 		 * between the defined hooks and the functions defined in this
 		 * class.
 		 */

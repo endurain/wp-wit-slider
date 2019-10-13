@@ -5,11 +5,11 @@
  * A class definition that includes attributes and functions used across both the
  * public-facing side of the site and the admin area.
  *
- * @link       https://www.mikeinmonospace.com/
+ * @link       https://github.com/endurain
  * @since      1.0.0
  *
- * @package    Monospace_Slides
- * @subpackage Monospace_Slides/includes
+ * @package    Wit_Slider
+ * @subpackage Wit_Slider/includes
  */
 
 /**
@@ -22,11 +22,11 @@
  * version of the plugin.
  *
  * @since      1.0.0
- * @package    Monospace_Slides
- * @subpackage Monospace_Slides/includes
- * @author     Mike In Monospace <mikeinmonospace@gmail.com>
+ * @package    Wit_Slider
+ * @subpackage Wit_Slider/includes
+ * @author     Zac Sanders <zacharyjsanders@gmail.com>
  */
-class Monospace_Slides {
+class Wit_Slider {
 
 	/**
 	 * The loader that's responsible for maintaining and registering all hooks that power
@@ -34,7 +34,7 @@ class Monospace_Slides {
 	 *
 	 * @since  1.0.0
 	 * @access protected
-	 * @var    Monospace_Slides_Loader $loader    Maintains and registers all hooks for the plugin.
+	 * @var    Wit_Slider_Loader $loader    Maintains and registers all hooks for the plugin.
 	 */
 	protected $loader;
 
@@ -67,8 +67,8 @@ class Monospace_Slides {
 	 */
 	public function __construct() {
 
-		if ( defined( 'MONOSPACE_SLIDES_VERSION' ) ) {
-			$this->version = MONOSPACE_SLIDES_VERSION;
+		if ( defined( 'WIT_SLIDER_VERSION' ) ) {
+			$this->version = WIT_SLIDER_VERSION;
 		} else {
 			$this->version = '1.0.0';
 		}
@@ -87,10 +87,10 @@ class Monospace_Slides {
 	 *
 	 * Include the following files that make up the plugin:
 	 *
-	 * - Monospace_Slides_Loader    Orchestrates the hooks of the plugin.
-	 * - Monospace_Slides_I18n      Defines internationalization functionality.
-	 * - Monospace_Slides_Admin     Defines all hooks for the admin area.
-	 * - Monospace_Slides_Public    Defines all hooks for the public side of the site.
+	 * - Wit_Slider_Loader    Orchestrates the hooks of the plugin.
+	 * - Wit_Slider_I18n      Defines internationalization functionality.
+	 * - Wit_Slider_Admin     Defines all hooks for the admin area.
+	 * - Wit_Slider_Public    Defines all hooks for the public side of the site.
 	 *
 	 * Create an instance of the loader which will be used to register the hooks
 	 * with WordPress.
@@ -123,14 +123,14 @@ class Monospace_Slides {
 		 */
 		require_once plugin_dir_path( dirname( __FILE__ ) ) . 'public/class-wit-slider-public.php';
 
-		$this->loader = new Monospace_Slides_Loader();
+		$this->loader = new Wit_Slider_Loader();
 
 	}
 
 	/**
 	 * Define the locale for this plugin for internationalization.
 	 *
-	 * Uses the Monospace_Slides_I18n class in order to set the domain and to register the hook
+	 * Uses the Wit_Slider_I18n class in order to set the domain and to register the hook
 	 * with WordPress.
 	 *
 	 * @since  1.0.0
@@ -138,7 +138,7 @@ class Monospace_Slides {
 	 */
 	private function set_locale() {
 
-		$plugin_i18n = new Monospace_Slides_I18n();
+		$plugin_i18n = new Wit_Slider_I18n();
 
 		$this->loader->add_action( 'plugins_loaded', $plugin_i18n, 'load_plugin_textdomain' );
 
@@ -153,7 +153,7 @@ class Monospace_Slides {
 	 */
 	private function define_admin_hooks() {
 
-		$plugin_admin = new Monospace_Slides_Admin( $this->get_plugin_name(), $this->get_version() );
+		$plugin_admin = new Wit_Slider_Admin( $this->get_plugin_name(), $this->get_version() );
 
 		$this->loader->add_action( 'admin_enqueue_scripts', $plugin_admin, 'enqueue_styles' );
 		$this->loader->add_action( 'admin_enqueue_scripts', $plugin_admin, 'enqueue_scripts' );
@@ -169,7 +169,7 @@ class Monospace_Slides {
 	 */
 	private function define_public_hooks() {
 
-		$plugin_public = new Monospace_Slides_Public( $this->get_plugin_name(), $this->get_version() );
+		$plugin_public = new Wit_Slider_Public( $this->get_plugin_name(), $this->get_version() );
 
 		$this->loader->add_action( 'wp_enqueue_scripts', $plugin_public, 'enqueue_styles' );
 		$this->loader->add_action( 'wp_enqueue_scripts', $plugin_public, 'enqueue_scripts' );
@@ -200,7 +200,7 @@ class Monospace_Slides {
 	 * The reference to the class that orchestrates the hooks with the plugin.
 	 *
 	 * @since  1.0.0
-	 * @return Monospace_Slides_Loader    Orchestrates the hooks of the plugin.
+	 * @return Wit_Slider_Loader    Orchestrates the hooks of the plugin.
 	 */
 	public function get_loader() {
 		return $this->loader;

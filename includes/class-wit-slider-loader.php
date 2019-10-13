@@ -2,11 +2,11 @@
 /**
  * Register all actions and filters for the plugin
  *
- * @link       https://www.mikeinmonospace.com/
+ * @link       https://github.com/endurain
  * @since      1.0.0
  *
- * @package    Monospace_Slides
- * @subpackage Monospace_Slides/includes
+ * @package    Wit_Slider
+ * @subpackage Wit_Slider/includes
  */
 
 /**
@@ -16,11 +16,11 @@
  * the plugin, and register them with the WordPress API. Call the
  * run function to execute the list of actions and filters.
  *
- * @package    Monospace_Slides
- * @subpackage Monospace_Slides/includes
- * @author     Mike In Monospace <mikeinmonospace@gmail.com>
+ * @package    Wit_Slider
+ * @subpackage Wit_Slider/includes
+ * @author     Zac Sanders <zacharyjsanders@gmail.com>
  */
-class Monospace_Slides_Loader {
+class Wit_Slider_Loader {
 
 	/**
 	 * The array of actions registered with WordPress.

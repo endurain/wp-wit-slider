@@ -4,9 +4,9 @@
  *
  * This file is used to markup the admin-facing aspects of the plugin.
  *
- * @link       https://www.mikeinmonospace.com/
+ * @link       https://github.com/endurain
  * @since      1.0.0
  *
- * @package    Monospace_Slides
- * @subpackage Monospace_Slides/admin/partials
+ * @package    Wit_Slider
+ * @subpackage Wit_Slider/admin/partials
  * /

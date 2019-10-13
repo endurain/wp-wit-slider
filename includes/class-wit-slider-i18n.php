@@ -5,11 +5,11 @@
  * Loads and defines the internationalization files for this plugin
  * so that it is ready for translation.
  *
- * @link       https://www.mikeinmonospace.com/
+ * @link       https://github.com/endurain
  * @since      1.0.0
  *
- * @package    Monospace_Slides
- * @subpackage Monospace_Slides/includes
+ * @package    Wit_Slider
+ * @subpackage Wit_Slider/includes
  */
 
 /**
@@ -19,11 +19,11 @@
  * so that it is ready for translation.
  *
  * @since      1.0.0
- * @package    Monospace_Slides
- * @subpackage Monospace_Slides/includes
- * @author     Mike In Monospace <mikeinmonospace@gmail.com>
+ * @package    Wit_Slider
+ * @subpackage Wit_Slider/includes
+ * @author     Zac Sanders <zacharyjsanders@gmail.com>
  */
-class Monospace_Slides_I18n {
+class Wit_Slider_I18n {
 
 
 	/**

@@ -2,11 +2,11 @@
 /**
  * Fired during plugin deactivation
  *
- * @link       https://www.mikeinmonospace.com/
+ * @link       https://github.com/endurain
  * @since      1.0.0
  *
- * @package    Monospace_Slides
- * @subpackage Monospace_Slides/includes
+ * @package    Wit_Slider
+ * @subpackage Wit_Slider/includes
  */
 
 /**
@@ -15,11 +15,11 @@
  * This class defines all code necessary to run during the plugin's deactivation.
  *
  * @since      1.0.0
- * @package    Monospace_Slides
- * @subpackage Monospace_Slides/includes
- * @author     Mike In Monospace <mikeinmonospace@gmail.com>
+ * @package    Wit_Slider
+ * @subpackage Wit_Slider/includes
+ * @author     Zac Sanders <zacharyjsanders@gmail.com>
  */
-class Monospace_Slides_Deactivator {
+class Wit_Slider_Deactivator {
 
 	/**
 	 * Fired during plugin deactivation.
