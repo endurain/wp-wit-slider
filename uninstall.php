@@ -15,10 +15,10 @@
  * For more information, see the following discussion:
  * https://github.com/tommcfarlin/WordPress-Plugin-Boilerplate/pull/123#issuecomment-28541913
  *
- * @link  https://www.mikeinmonospace.com/
+ * @link  https://github.com/endurain
  * @since 1.0.0
  *
- * @package Monospace_Slides
+ * @package Wit_Slider
  */
 
 // If uninstall not called from WordPress, then exit.
