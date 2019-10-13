@@ -79,6 +79,7 @@ class Wit_Slider {
 		$this->set_locale();
 		$this->define_admin_hooks();
 		$this->define_public_hooks();
+		$this->define_cpt_hooks();
 
 	}
 
@@ -99,6 +100,11 @@ class Wit_Slider {
 	 * @access private
 	 */
 	private function load_dependencies() {
+
+		/**
+		 * The class responsible for the functionality of the custom post type.
+		 */
+		require_once plugin_dir_path( dirname( __FILE__ ) ) . 'admin/class-wit-slider-cpt.php';
 
 		/**
 		 * The class responsible for orchestrating the actions and filters of the
@@ -175,6 +181,18 @@ class Wit_Slider {
 		$this->loader->add_action( 'wp_enqueue_scripts', $plugin_public, 'enqueue_scripts' );
 
 	}
+
+	/**
+ * Register all of the hooks related to registering a custom post type
+ * as well as customizing the admin columns.
+  *
+ * @since    1.0.0
+ * @access   private
+ */
+	private function define_cpt_hooks() {
+    $plugin_cpt = new Wit_Slider_CPT();
+    $this->loader->add_action( 'init', $plugin_cpt, 'new_cpt_slide' );
+}
 
 	/**
 	 * Run the loader to execute all of the hooks with WordPress.

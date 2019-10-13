@@ -28,6 +28,10 @@ class Wit_Slider_Activator {
 	 */
 	public static function activate() {
 
+		require_once plugin_dir_path( dirname( __FILE__ ) ) . 'admin/class-wit-slider-cpt.php';
+		Wit_Slider_CPT::new_cpt_slide();
+		flush_rewrite_rules();
+
 	}
 
 }
