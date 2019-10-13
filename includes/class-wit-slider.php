@@ -80,6 +80,7 @@ class Wit_Slider {
 		$this->define_admin_hooks();
 		$this->define_public_hooks();
 		$this->define_cpt_hooks();
+		$this->define_tax_hooks();
 
 	}
 
@@ -101,6 +102,10 @@ class Wit_Slider {
 	 */
 	private function load_dependencies() {
 
+		/**
+		 * The class responsible for the functionality of the custom taxonomy.
+		 */
+		require_once plugin_dir_path( dirname( __FILE__ ) ) . 'admin/class-wit-slider-tax.php';
 		/**
 		 * The class responsible for the functionality of the custom post type.
 		 */
@@ -167,6 +172,29 @@ class Wit_Slider {
 	}
 
 	/**
+ 	* Register all of the hooks related to registering a custom post type
+ 	* as well as customizing the admin columns.
+  *
+ 	* @since    1.0.0
+ 	* @access   private
+ 	*/
+		private function define_cpt_hooks() {
+    $plugin_cpt = new Wit_Slider_CPT();
+    $this->loader->add_action( 'init', $plugin_cpt, 'new_cpt_slide' );
+		$this->loader->add_filter( 'manage_edit-wtsl_slide_columns', $plugin_cpt, 'add_slide_columns' );
+		$this->loader->add_filter( 'manage_wtsl_slide_posts_custom_column', $plugin_cpt, 'add_slide_columns_content', 10, 2 );
+	}
+	/**
+	 * Register all of the hooks related to registering a custom taxonomy.
+	 *
+	 * @since    1.0.0
+	 * @access   private
+	 */
+		private function define_tax_hooks() {
+	    $plugin_tax = new Wit_Slider_TAX();
+	    $this->loader->add_action( 'init', $plugin_tax, 'new_tax_slider' );
+	}
+	/**
 	 * Register all of the hooks related to the public-facing functionality
 	 * of the plugin.
 	 *
@@ -181,18 +209,6 @@ class Wit_Slider {
 		$this->loader->add_action( 'wp_enqueue_scripts', $plugin_public, 'enqueue_scripts' );
 
 	}
-
-	/**
- * Register all of the hooks related to registering a custom post type
- * as well as customizing the admin columns.
-  *
- * @since    1.0.0
- * @access   private
- */
-	private function define_cpt_hooks() {
-    $plugin_cpt = new Wit_Slider_CPT();
-    $this->loader->add_action( 'init', $plugin_cpt, 'new_cpt_slide' );
-}
 
 	/**
 	 * Run the loader to execute all of the hooks with WordPress.
