@@ -35,8 +35,10 @@ class Wit_Slider_Activator {
 		 * The class responsible for the functionality of the custom taxonomy.
 		 */
 		require_once plugin_dir_path( dirname( __FILE__ ) ) . 'admin/class-wit-slider-tax.php';
+
 		Wit_Slider_CPT::new_cpt_slide();
 		Wit_Slider_TAX::new_tax_slider();
+
 		flush_rewrite_rules();
 	}
 
